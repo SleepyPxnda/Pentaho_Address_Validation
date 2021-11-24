@@ -486,24 +486,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Create a folder</from>
-      <to>HTTP</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Delete files</from>
-      <to>HTTP</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>HTTP</from>
       <to>Unzip file</to>
       <from_nr>0</from_nr>
@@ -513,7 +495,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Create a folder</from>
+      <from>Delete files</from>
       <to>Unzip file</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -522,7 +504,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete files</from>
+      <from>Create a folder</from>
       <to>Unzip file</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
