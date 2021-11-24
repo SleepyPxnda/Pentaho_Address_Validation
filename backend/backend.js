@@ -1,23 +1,21 @@
 // General Imports
 const express = require("express");
 const app = express();
-const fs = require('fs')
+const fs = require('fs');
+const upload = require("multer")();
+const Pool = require("pg").Pool;
 
-// Hive Imports
-const hive = require('hive-driver');
-
-// Declarations for hive
-const { TCLIService, TCLIService_types } = hive.thrift;
-const client = new hive.HiveClient(
-    TCLIService,
-    TCLIService_types
-);
-const utils = new hive.HiveUtils(
-    TCLIService_types
-);
+const pool = new Pool({
+    user:"postgres",
+    host:"localhost",
+    database:"default",
+    password:"example",
+    port:"5432"
+})
 
 const port = 3000
-app.use(express.json());
+//app.use(express.json());
+app.use(express.urlencoded());
 
 app.listen(8080, () => {console.log("Server listening ...")})
 
@@ -40,14 +38,13 @@ app.set('views', './views') // specify the views directory
 app.set('view engine', 'ntl') // register the template engine
 
 app.get("/", (req, res) => {
-    app.render("index", {"title": "peter", "message":"works"}, ((err, html) => {
+    app.render("index", {"result" : null}, ((err, html) => {
         if(err) throw err;
         res.send(html);
     }));
 })
 
 app.post("/checkDatabase", (req, res) => {
-    console.log(req.body);
     let place = {
         "street": req.body.street,
         "number": req.body.number,
@@ -56,53 +53,29 @@ app.post("/checkDatabase", (req, res) => {
         "postcode":req.body.postcode
     }
 
-    client.connect(
-        {
-            host: 'localhost',
-            port: 10000
-        },
-        new hive.connections.TcpConnection(),
-        new hive.auth.PlainTcpAuthentication({
-            username: 'hadoop',
-            password: ' '
-        })
-    ).then(async client => {
-        const session = await client.openSession({
-            client_protocol: TCLIService_types.TProtocolVersion.HIVE_CLI_SERVICE_PROTOCOL_V10
+    console.log("Place", place)
+
+    pool.query(
+        `SELECT * FROM addresses WHERE street LIKE '${place.street}'  AND housenumber LIKE '${place.number}' 
+        AND city LIKE '${place.city}' 
+        AND region LIKE '${place.state}' 
+        AND postcode LIKE '${place.postcode}'`,
+        (error, result) => {
+            if(error) throw error;
+            console.log(result);
+
+            if(result.rowCount > 0){
+                app.render("index", {"result": result}, ((err, html) => {
+                    if(err) throw err;
+                    res.send(html);
+                }));
+            } else {
+                app.render("index", {"result": null}, ((err, html) => {
+                    if(err) throw err;
+                    res.send(html);
+                }));
+            }
         });
-        console.log("Executing statement ...")
-        const operation = await session.executeStatement(
-            `SELECT * FROM final_addresses 
-                    WHERE street LIKE '${place.street}' 
-                    AND housenumber LIKE '${place.number}' 
-                    AND city LIKE '${place.city}' 
-                    AND region LIKE '${place.state}' 
-                    AND postcode LIKE '${place.postcode}'`
-        );
-        await utils.waitUntilReady(operation, true, () => { console.log("Retrieved Result ...")});
-        await utils.fetchAll(operation);
-
-        console.log("Closing database connections ...")
-        await operation.close();
-        await session.close();
-
-        let result = await utils.getResult(operation).getValue();
-
-        console.log(result.length);
-        if(result.length > 0){
-            app.render("index", {"result": result}, ((err, html) => {
-                if(err) throw err;
-                res.send(html);
-            }));
-        } else {
-            app.render("index", {"result": null}, ((err, html) => {
-                if(err) throw err;
-                res.send(html);
-            }));
-        }
-
-
-    }).catch(console.log)
 })
 
 
