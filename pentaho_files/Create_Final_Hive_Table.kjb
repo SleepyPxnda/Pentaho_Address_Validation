@@ -360,7 +360,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Create Final Table</name>
+      <name>Drop final table</name>
       <description/>
       <type>SQL</type>
       <attributes/>
@@ -376,7 +376,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>352</xloc>
-      <yloc>368</yloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -386,16 +386,12 @@
       <attributes/>
       <sql>CREATE TABLE IF NOT EXISTS final_addresses AS
 (SELECT DISTINCT
-	get_json_object(json, '$.properties.hash') as hash,
 	get_json_object(json, '$.properties.street') as street,
 	get_json_object(json, '$.properties.number') as housenumber,
 	get_json_object(json, '$.properties.city') as city,
-	get_json_object(json, '$.properties.unit') as unit,
 	get_json_object(json, '$.properties.district') as district,
 	get_json_object(json, '$.properties.region') as region,
-	get_json_object(json, '$.properties.postcode') as postcode,
-	get_json_object(json, '$.properties.id') as id,
-	get_json_object(json, '$.geometry.coordinates') as coordinates
+	get_json_object(json, '$.properties.postcode') as postcode
  FROM addresses);</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
@@ -406,7 +402,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>480</xloc>
-      <yloc>368</yloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -472,7 +468,12 @@
       <attributes/>
       <sql>INSERT INTO final_addresses_temp
 SELECT * FROM final_addresses 
-WHERE street IS NOT NULL AND housenumber IS NOT NULL AND city IS NOT NULL</sql>
+WHERE street IS NOT NULL AND street &lt;&gt; ''
+AND housenumber IS NOT NULL and housenumber &lt;&gt; ''
+AND city IS NOT NULL and city &lt;&gt; ''
+AND district IS NOT NULL and district &lt;&gt; ''
+AND region IS NOT NULL and region &lt;&gt; ''
+AND postcode IS NOT NULL and postcode &lt;&gt; '';</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -524,7 +525,7 @@ WHERE street IS NOT NULL AND housenumber IS NOT NULL AND city IS NOT NULL</sql>
   </entries>
   <hops>
     <hop>
-      <from>Create Final Table</from>
+      <from>Drop final table</from>
       <to>Create Table and Insert</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -533,7 +534,7 @@ WHERE street IS NOT NULL AND housenumber IS NOT NULL AND city IS NOT NULL</sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Create Final Table</from>
+      <from>Drop final table</from>
       <to>DELETE_FINAL_TABLE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -588,7 +589,7 @@ WHERE street IS NOT NULL AND housenumber IS NOT NULL AND city IS NOT NULL</sql>
     </hop>
     <hop>
       <from>Start</from>
-      <to>Create Final Table</to>
+      <to>Drop final table</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

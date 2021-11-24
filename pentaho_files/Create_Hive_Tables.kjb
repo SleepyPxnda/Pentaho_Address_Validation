@@ -355,7 +355,7 @@ STORED AS TEXTFILE LOCATION '${user.home}/address_validation/raw/';</sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
+      <xloc>368</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
@@ -368,39 +368,7 @@ STORED AS TEXTFILE LOCATION '${user.home}/address_validation/raw/';</sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>272</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Check DB connections</name>
-      <description/>
-      <type>CHECK_DB_CONNECTIONS</type>
-      <attributes/>
-      <connections>
-        <connection>
-          <name>Hive2</name>
-          <waitfor>5</waitfor>
-          <waittime>second</waittime>
-        </connection>
-      </connections>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>ERROR_DB_CON_HIVE</name>
-      <description/>
-      <type>ABORT</type>
-      <attributes/>
-      <message>Cannot connect to Hive db</message>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>304</xloc>
+      <xloc>480</xloc>
       <yloc>256</yloc>
       <attributes_kjc/>
     </entry>
@@ -434,7 +402,7 @@ STORED AS TEXTFILE LOCATION '${user.home}/address_validation/raw/';</sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>480</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
@@ -452,30 +420,12 @@ STORED AS TEXTFILE LOCATION '${user.home}/address_validation/raw/';</sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>256</xloc>
       <yloc>176</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
-    <hop>
-      <from>Start</from>
-      <to>Check DB connections</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Check DB connections</from>
-      <to>ERROR_DB_CON_HIVE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>Create Hive Table</from>
       <to>ERROR_SQL_SCRIPT</to>
@@ -495,15 +445,6 @@ STORED AS TEXTFILE LOCATION '${user.home}/address_validation/raw/';</sql>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Check DB connections</from>
-      <to>Delete Old Table</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Delete Old Table</from>
       <to>Create Hive Table</to>
       <from_nr>0</from_nr>
@@ -511,6 +452,15 @@ STORED AS TEXTFILE LOCATION '${user.home}/address_validation/raw/';</sql>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Start</from>
+      <to>Delete Old Table</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
