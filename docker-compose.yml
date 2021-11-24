@@ -29,17 +29,29 @@ services:
     networks: 
       - big-data-network
   
-  postgres:
+  node:
+    container_name: node
+    image: "node:8"
+    working_dir: /home/node/app
+    volumes:
+      - ./backend:/home/node/app
+    ports:
+      - 8080:8080
+    command: "npm start"
+    networks: 
+      - big-data-network
+
+  database:
     container_name: database
-    image: postgres:latest
+    image: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: example
-      POSTGRES_DB: addresses
+      POSTGRES_DB: default
     ports:
-      - 5432:5432
-    networks:
-      - big-data-network
+    - 5432:5432
+    networks: 
+     - big-data-network
 
 networks:
   big-data-network:
