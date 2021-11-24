@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Address Validation </title>
+</head>
+<body>
+    <label>Street</label>
+    <input id="street"\>
+
+    <hr style="width:50%;text-align:left;margin-left:0">
+
+    <label>Number</label>
+    <input id="number"\>
+
+    <hr style="width:50%;text-align:left;margin-left:0">
+
+    <label>City</label>
+    <input id="city"\>
+
+    <hr style="width:50%;text-align:left;margin-left:0">
+
+    <label>State</label>
+    <input id="State"\>
+
+    <hr style="width:50%;text-align:left;margin-left:0">
+
+    <label>Postcode</label>
+    <input id="postcode"\>
+
+    <hr style="width:50%;text-align:left;margin-left:0; background-color:green">
+
+    <button onClick="checkAddress()""> Check Address </button>
+
+    <hr style="width:50%;text-align:left;margin-left:0">
+
+    #result#
+
+    <script>
+
+    function checkAddress() {
+    console.log("checked");
+    }
+
+    </script>
+</body>
+</html>
