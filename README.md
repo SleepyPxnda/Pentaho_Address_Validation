@@ -18,3 +18,13 @@ Deshalb werden die Daten durch den Hive Table bereitgestellt.
 
 ## Backend
 Das Backend ist ein Node.js Backend welches mithilfe des "hive-drivers" auf die Hive-Datenbank zugreift und Daten abfragen kann.
+
+
+# Wichtig
+Damit der Workflow richtig arbeitet muss der Postgres Treiber aktualisiert werden.
+
+Hierfür einfach in das Verzeichnis /home/pentaho/pentaho/data-integration/libs
+Dort dann
+
+``wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar```
+``rm postgresql-41.1.0.jar``
