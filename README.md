@@ -10,4 +10,4 @@ Dort dann
 
 ``wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar``
 
-``rm postgresql-41.1.0.jar``
+``rm postgresql-42.1.1.jar``
