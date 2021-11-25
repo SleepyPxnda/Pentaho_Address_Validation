@@ -419,6 +419,30 @@ LOCATION '${user.home}/address_validation/raw/${region}/';</sql>
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>Dieser Job ist wieder mit einem Subfolder-Reader gekoppelt.
+
+Somit fügen wir unserem addresses Table Partitionen mit jedem Subfolder, 
+also jeder Region im Datensatz, hinzu.</note>
+      <xloc>208</xloc>
+      <yloc>384</yloc>
+      <width>406</width>
+      <heigth>73</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>

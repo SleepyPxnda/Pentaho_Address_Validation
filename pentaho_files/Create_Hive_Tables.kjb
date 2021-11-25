@@ -464,6 +464,28 @@ STORED AS TEXTFILE LOCATION '${user.home}/address_validation/raw/';</sql>
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>Wir löschen zuerst den Table, um sicher zu gehen, dass wir von null starten.
+Dann erstellen wir den addresses Table.</note>
+      <xloc>144</xloc>
+      <yloc>336</yloc>
+      <width>404</width>
+      <heigth>42</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>

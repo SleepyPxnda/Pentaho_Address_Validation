@@ -315,7 +315,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
+      <xloc>208</xloc>
       <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
@@ -327,8 +327,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
-      <yloc>272</yloc>
+      <xloc>736</xloc>
+      <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -410,7 +410,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>640</xloc>
-      <yloc>272</yloc>
+      <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -423,11 +423,11 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>544</xloc>
-      <yloc>384</yloc>
+      <yloc>368</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>Abort job</name>
+      <name>SOURCE_NOT_FOUND</name>
       <description/>
       <type>ABORT</type>
       <attributes/>
@@ -435,8 +435,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>400</yloc>
+      <xloc>544</xloc>
+      <yloc>480</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -476,15 +476,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Start</from>
-      <to>Create a folder</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Unzip file</from>
       <to>Success</to>
       <from_nr>0</from_nr>
@@ -513,7 +504,7 @@
     </hop>
     <hop>
       <from>File exists</from>
-      <to>Abort job</to>
+      <to>SOURCE_NOT_FOUND</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -547,8 +538,44 @@
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>Start</from>
+      <to>Create a folder</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>Zuerst wird ein Ordner "raw" für die Rohdateien angelegt.
+
+Daraufhin wird mithilfe des Shell-Scriptes die Dateien von der OpenAdresses Website
+heruntergeladen.
+
+Danach folgt ein kurzer Test ob die Sourcedatei existiert, bevor die heruntergeladene
+.zip Datei entzippt wird.</note>
+      <xloc>240</xloc>
+      <yloc>208</yloc>
+      <width>456</width>
+      <heigth>120</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>

@@ -434,6 +434,27 @@
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
+    <notepad>
+      <note>Hier werden die Daten aus der Hive Datenbank in eine PostgreSQL Datenbank übertragen.</note>
+      <xloc>48</xloc>
+      <yloc>256</yloc>
+      <width>481</width>
+      <heigth>26</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <connection>
     <name>Hive2</name>
@@ -618,10 +639,6 @@
       <field>
         <column_name>city</column_name>
         <stream_name>final_addresses.city</stream_name>
-      </field>
-      <field>
-        <column_name>district</column_name>
-        <stream_name>final_addresses.district</stream_name>
       </field>
       <field>
         <column_name>region</column_name>

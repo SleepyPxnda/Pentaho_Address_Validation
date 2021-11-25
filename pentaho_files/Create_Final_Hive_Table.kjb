@@ -355,7 +355,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
+      <xloc>128</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -375,7 +375,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
+      <xloc>224</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -389,7 +389,6 @@
 	get_json_object(json, '$.properties.street') as street,
 	get_json_object(json, '$.properties.number') as housenumber,
 	get_json_object(json, '$.properties.city') as city,
-	get_json_object(json, '$.properties.district') as district,
 	get_json_object(json, '$.properties.region') as region,
 	get_json_object(json, '$.properties.postcode') as postcode
  FROM addresses);</sql>
@@ -401,7 +400,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
+      <xloc>352</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -414,7 +413,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
+      <xloc>304</xloc>
       <yloc>432</yloc>
       <attributes_kjc/>
     </entry>
@@ -427,7 +426,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>432</xloc>
       <yloc>464</yloc>
       <attributes_kjc/>
     </entry>
@@ -439,7 +438,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1232</xloc>
+      <xloc>1056</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -457,7 +456,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
+      <xloc>480</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -471,7 +470,6 @@ SELECT * FROM final_addresses
 WHERE street IS NOT NULL AND street &lt;&gt; ''
 AND housenumber IS NOT NULL and housenumber &lt;&gt; ''
 AND city IS NOT NULL and city &lt;&gt; ''
-AND district IS NOT NULL and district &lt;&gt; ''
 AND region IS NOT NULL and region &lt;&gt; ''
 AND postcode IS NOT NULL and postcode &lt;&gt; '';</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
@@ -482,7 +480,7 @@ AND postcode IS NOT NULL and postcode &lt;&gt; '';</sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>800</xloc>
+      <xloc>640</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -500,7 +498,7 @@ AND postcode IS NOT NULL and postcode &lt;&gt; '';</sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>992</xloc>
+      <xloc>816</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -518,7 +516,7 @@ AND postcode IS NOT NULL and postcode &lt;&gt; '';</sql>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1120</xloc>
+      <xloc>944</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -607,6 +605,54 @@ AND postcode IS NOT NULL and postcode &lt;&gt; '';</sql>
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>Zuerst löschen wir den Table.
+
+Danach erstellen wir den final_addresses table und füllen ihn mit den Daten aus dem addresses Table.
+Hierbei werden json Queries benutzt, um die Daten aus den Json-Objekten im addresses Table zu filtern.
+</note>
+      <xloc>64</xloc>
+      <yloc>192</yloc>
+      <width>554</width>
+      <heigth>88</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Der hintere Teil ist ein Workaround, um die fehlende "delete" Funktionalität in Hive zu ersetzen.
+Wir kopieren die Daten in einen temp-Table basierend auf einem SELECT Statement.
+Sind die Daten dann kopiert, übertragen wir sie wieder auf den originalen Table, wodurch wir ein filtern erreichen.</note>
+      <xloc>608</xloc>
+      <yloc>368</yloc>
+      <width>603</width>
+      <heigth>58</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>

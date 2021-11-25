@@ -381,7 +381,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
+      <xloc>592</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -420,7 +420,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>464</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -462,7 +462,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>720</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -473,7 +473,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/Read_Files_in_raw.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Read_Subfolder_Names.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -501,7 +501,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
+      <xloc>592</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -527,7 +527,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>464</xloc>
       <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
@@ -564,7 +564,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>464</xloc>
       <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
@@ -586,7 +586,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>96</xloc>
+      <xloc>368</xloc>
       <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
@@ -597,7 +597,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Internal.Entry.Current.Directory}/Read_Files_in_raw.ktr</filename>
+      <filename>${Internal.Entry.Current.Directory}/Read_Subfolder_Names.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -625,7 +625,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
+      <xloc>592</xloc>
       <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
@@ -667,7 +667,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>720</xloc>
       <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
@@ -704,7 +704,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>832</xloc>
       <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
@@ -717,7 +717,6 @@
 street text,
 housenumber text,
 city text,
-district text,
 region text,
 postcode text );
 </sql>
@@ -729,7 +728,7 @@ postcode text );
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>464</xloc>
       <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
@@ -768,7 +767,7 @@ postcode text );
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
+      <xloc>592</xloc>
       <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
@@ -805,7 +804,7 @@ postcode text );
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>720</xloc>
       <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
@@ -817,7 +816,7 @@ postcode text );
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>816</xloc>
       <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
@@ -942,6 +941,48 @@ postcode text );
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>Hier erstellen wir das Directory im HDFS für unsere Daten</note>
+      <xloc>128</xloc>
+      <yloc>304</yloc>
+      <width>309</width>
+      <heigth>26</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Hier wird ein Table in der RDBMS der End-Nutzer-Datenbank erstellt</note>
+      <xloc>64</xloc>
+      <yloc>560</yloc>
+      <width>366</width>
+      <heigth>26</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>

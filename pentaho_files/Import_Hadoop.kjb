@@ -310,8 +310,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
-      <yloc>208</yloc>
+      <xloc>256</xloc>
+      <yloc>272</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -335,8 +335,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>208</yloc>
+      <xloc>400</xloc>
+      <yloc>272</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -347,8 +347,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>192</yloc>
+      <xloc>848</xloc>
+      <yloc>256</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -360,8 +360,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>320</yloc>
+      <xloc>400</xloc>
+      <yloc>384</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -386,8 +386,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>80</yloc>
+      <xloc>608</xloc>
+      <yloc>144</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -412,8 +412,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>352</yloc>
+      <xloc>608</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -425,8 +425,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>176</yloc>
+      <xloc>608</xloc>
+      <yloc>240</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -438,8 +438,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>240</yloc>
+      <xloc>608</xloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -536,6 +536,32 @@
     </hop>
   </hops>
   <notepads>
+    <notepad>
+      <note>Dieser Job ist gekoppelt mit dem Read_Subfolder_Directory das vorangeht.
+Dadurch wird dieser Job für jedes Subdir ausgeführt.
+
+Hierbei erstellen wir ein Hadoop Ordner für jedes Subdir.
+Zudem löschen wir vorhandene statewide-addresses oder statewide-buildings
+Dateien aus diesen Ordnern, damit wir in der Datenbank keine unnötigen Wiederholungen haben.</note>
+      <xloc>272</xloc>
+      <yloc>480</yloc>
+      <width>523</width>
+      <heigth>105</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <attributes/>
 </job>
