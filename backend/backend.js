@@ -7,14 +7,12 @@ const Pool = require("pg").Pool;
 
 const pool = new Pool({
     user:"postgres",
-    host:"localhost",
+    host:"database",
     database:"default",
     password:"example",
     port:"5432"
 })
 
-const port = 3000
-//app.use(express.json());
 app.use(express.urlencoded());
 
 app.listen(8080, () => {console.log("Server listening ...")})
@@ -26,10 +24,10 @@ app.engine('ntl', function (filePath, options, callback) { // define the templat
         let rendered;
         if(options.result){
             rendered = content.toString()
-                .replace('#result#', '<p style="background-color: green"> Found Address </p>')
+                .replace('#result#', '<p class="success"> Found Address </p>')
         } else {
             rendered = content.toString()
-                .replace('#result#', '<p style="background-color: red"> Found no Address </p>')
+                .replace('#result#', '<p class="error"> Found no Address </p>')
         }
         return callback(null, rendered)
     })
@@ -56,13 +54,13 @@ app.post("/checkDatabase", (req, res) => {
     console.log("Place", place)
 
     pool.query(
-        `SELECT * FROM addresses WHERE street LIKE '${place.street}'  AND housenumber LIKE '${place.number}' 
+        `SELECT * FROM addresses WHERE street LIKE '${place.street}'  
+        AND housenumber LIKE '${place.number}' 
         AND city LIKE '${place.city}' 
         AND region LIKE '${place.state}' 
         AND postcode LIKE '${place.postcode}'`,
         (error, result) => {
-            if(error) throw error;
-            console.log(result);
+            if(error) console.log(error);
 
             if(result.rowCount > 0){
                 app.render("index", {"result": result}, ((err, html) => {
