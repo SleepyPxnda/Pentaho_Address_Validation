@@ -381,8 +381,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>384</yloc>
+      <xloc>320</xloc>
+      <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -420,8 +420,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>464</yloc>
+      <xloc>192</xloc>
+      <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -462,8 +462,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
-      <yloc>384</yloc>
+      <xloc>448</xloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -501,8 +501,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>384</yloc>
+      <xloc>320</xloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -527,8 +527,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>272</yloc>
+      <xloc>192</xloc>
+      <yloc>304</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -564,8 +564,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
-      <yloc>272</yloc>
+      <xloc>192</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -586,8 +586,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>464</yloc>
+      <xloc>96</xloc>
+      <yloc>208</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -625,8 +625,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
-      <yloc>272</yloc>
+      <xloc>320</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -667,8 +667,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
-      <yloc>272</yloc>
+      <xloc>448</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -704,8 +704,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
-      <yloc>384</yloc>
+      <xloc>560</xloc>
+      <yloc>416</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -729,8 +729,8 @@ postcode text );
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1008</xloc>
-      <yloc>384</yloc>
+      <xloc>192</xloc>
+      <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -768,8 +768,45 @@ postcode text );
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1008</xloc>
-      <yloc>304</yloc>
+      <xloc>320</xloc>
+      <yloc>560</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Cleanup</name>
+      <description/>
+      <type>JOB</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/Cleanup.kjb</filename>
+      <jobname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>448</xloc>
+      <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -780,8 +817,8 @@ postcode text );
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1008</xloc>
-      <yloc>208</yloc>
+      <xloc>544</xloc>
+      <yloc>560</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
@@ -868,15 +905,6 @@ postcode text );
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Move Entries to RDBMS</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Create Final Hive Table</from>
       <to>Create Table in SQL</to>
       <from_nr>0</from_nr>
@@ -893,6 +921,24 @@ postcode text );
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Move Entries to RDBMS</from>
+      <to>Cleanup</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Cleanup</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
