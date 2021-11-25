@@ -225,8 +225,8 @@
             <input id="number" type="text"   name="number" required/>
           </div>
           <div class="item">
-            <label for="state">Region<span>*</span></label>
-            <input id="state" type="text"   name="state" required/>
+            <label for="region">Region<span>*</span></label>
+            <input id="region" type="text" name="region" required/>
           </div>
           <div class="item">
             <label for="postcode">Zip/Postal Code<span>*</span></label>

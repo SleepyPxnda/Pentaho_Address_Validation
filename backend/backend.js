@@ -47,7 +47,7 @@ app.post("/checkDatabase", (req, res) => {
         "street": req.body.street,
         "number": req.body.number,
         "city": req.body.city,
-        "state":req.body.state,
+        "region":req.body.region,
         "postcode":req.body.postcode
     }
 
@@ -57,7 +57,7 @@ app.post("/checkDatabase", (req, res) => {
         `SELECT * FROM addresses WHERE street LIKE '${place.street}'  
         AND housenumber LIKE '${place.number}' 
         AND city LIKE '${place.city}' 
-        AND region LIKE '${place.state}' 
+        AND region LIKE '${place.region}' 
         AND postcode LIKE '${place.postcode}'`,
         (error, result) => {
             if(error) console.log(error);
