@@ -320,40 +320,6 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>HTTP</name>
-      <description/>
-      <type>HTTP</type>
-      <attributes/>
-      <url>${url}</url>
-      <targetfilename>${user.home}/address_validation/raw/${region}.zip</targetfilename>
-      <file_appended>N</file_appended>
-      <date_time_added>N</date_time_added>
-      <targetfilename_extension/>
-      <uploadfilename/>
-      <run_every_row>N</run_every_row>
-      <url_fieldname/>
-      <upload_fieldname/>
-      <dest_fieldname/>
-      <username/>
-      <password>Encrypted </password>
-      <proxy_host/>
-      <proxy_port/>
-      <non_proxy_hosts/>
-      <addfilenameresult>N</addfilenameresult>
-      <headers>
-        <header>
-          <header_name>Authorization</header_name>
-          <header_value>Bearer oa.2df226db3904d09727977a02c15b27e505b9ff874cf5faefe86e0b9a45e2e3c2</header_value>
-        </header>
-      </headers>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>544</xloc>
-      <yloc>480</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
       <name>Success</name>
       <description/>
       <type>SUCCESS</type>
@@ -473,6 +439,31 @@
       <yloc>400</yloc>
       <attributes_kjc/>
     </entry>
+    <entry>
+      <name>Download Addresses</name>
+      <description/>
+      <type>SHELL</type>
+      <attributes/>
+      <filename/>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>Y</insertScript>
+      <script>wget --header="Authorization: Bearer oa.2df226db3904d09727977a02c15b27e505b9ff874cf5faefe86e0b9a45e2e3c2" -O ${user.home}/address_validation/raw/${region}.zip ${url}</script>
+      <loglevel>Basic</loglevel>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>432</xloc>
+      <yloc>368</yloc>
+      <attributes_kjc/>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -512,15 +503,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>HTTP</from>
-      <to>File exists</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>File exists</from>
       <to>Unzip file</to>
       <from_nr>0</from_nr>
@@ -539,8 +521,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Delete files</from>
-      <to>File exists</to>
+      <from>Create a folder</from>
+      <to>Download Addresses</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -548,7 +530,16 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Create a folder</from>
+      <from>Delete files</from>
+      <to>Download Addresses</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Download Addresses</from>
       <to>File exists</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
