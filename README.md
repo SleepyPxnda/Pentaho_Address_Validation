@@ -9,4 +9,5 @@ Hierfür einfach in das Verzeichnis /home/pentaho/pentaho/data-integration/libs
 Dort dann
 
 ``wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar``
+
 ``rm postgresql-41.1.0.jar``
