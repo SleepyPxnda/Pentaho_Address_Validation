@@ -4,7 +4,7 @@ Der Workflow wurde im Rahmen der Big Data Studienarbeit erstellt.
 # Wichtig
 Damit der Workflow richtig arbeitet, muss der Postgres Treiber aktualisiert werden.
 
-#### Pentaho Docker anpassen
+#### Postgres Treiber im Pentaho Docker aktualisieren
 Hierfür einfach in das Verzeichnis /home/pentaho/pentaho/data-integration/lib
 Dort dann:
 
